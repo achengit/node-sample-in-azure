@@ -1,9 +1,34 @@
-var http = require('http')
-var port = process.env.PORT || 1337;
+var express = require('express');
+var app = express();
 
-console.log('prot: ', port);
+app.get('/hello', function (req, res) {
+  res.send('Hello Azure!');
+});
 
-http.createServer(function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello Azure\n');
-}).listen(port);
+app.get('/contacts', function (req, res) {
+	
+  var contacts = [
+					{
+						"id":1,
+						"name":"Barney Poland",
+						"email":"barney@contoso.com"
+					},
+					{
+						"id":2,
+						"name":"Lacy Barrera",
+						"email":"lacy@contoso.com"
+					},
+					{
+						"id":3,
+						"name":"Lora Riggs",
+						"email":"lora@contoso.com"
+					}
+				]	
+  
+  res.json(contacts);  
+
+});
+
+
+
+app.listen(process.env.PORT || 3000);
