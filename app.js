@@ -8,27 +8,25 @@ app.get('/hello', function (req, res) {
 app.get('/contacts', function (req, res) {
 	
   var contacts = [
-					{
-						"id":1,
-						"name":"Barney Poland",
-						"email":"barney@contoso.com"
-					},
-					{
-						"id":2,
-						"name":"Lacy Barrera",
-						"email":"lacy@contoso.com"
-					},
-					{
-						"id":3,
-						"name":"Lora Riggs",
-						"email":"lora@contoso.com"
-					}
-				]	
+		   {
+		     "id":1,
+		     "name":"Barney Poland",
+		     "email":"barney@contoso.com"
+		   },
+		   {
+	             "id":2,
+		     "name":"Lacy Barrera",
+		     "email":"lacy@contoso.com"
+		  },
+		  {
+	            "id":3,
+		    "name":"Lora Riggs",
+		    "email":"lora@contoso.com"
+		  }
+	        ];	
   
-  res.json(contacts);  
+  res.json(contacts);
 
 });
-
-
 
 app.listen(process.env.PORT || 3000);
