@@ -12,11 +12,11 @@
 			$.get( "http://aaronsamplenode.azurewebsites.net/contacts", function( data ) {
 			    
 			    var ulTemplate = '';
-				for (contact of data) {
-				    ulTemplate += '<li>' + contact.name + '</li>';
-				}
-				
-				$('#contacts').html(ulTemplate);
+			    for (contact of data) {
+			        ulTemplate += '<li>' + contact.name + '</li>';
+			    }
+
+			    $('#contacts').html(ulTemplate);
 			});
 		
 		</script>
