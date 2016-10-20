@@ -5,13 +5,18 @@
 	</head>
 	
 	<body>
-		<div id="contacts">
-		</div>
+
+		<ul id="contacts"></ul>
 		
 		<script>
-			$.get( "http://localhost:3000/contacts", function( data ) {
+			$.get( "http://aaronsamplenode.azurewebsites.net/contacts", function( data ) {
+			    
+			    var ulTemplate = '';
+				for (contact of data) {
+				    ulTemplate += '<li>' + contact.name + '</li>';
+				}
 				
-				console.log(data);
+				$('#contacts').html(ulTemplate);
 			});
 		
 		</script>
